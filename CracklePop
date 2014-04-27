@@ -1,0 +1,34 @@
+
+public class CracklePop {
+
+	/**
+	 * @Author Ifeanyi_Kalu
+	 */
+	public static void main(String[] args) {
+		
+		cracklePop(100);
+		
+	}
+	
+	/**Recursive function to check if a number is divisible by 3, 
+		and print Crackle instead of the number. 
+		If it's divisible by 5, it prints Pop. 
+		If it's divisible by both 3 and 5, it prints CracklePop
+		*/
+	public static void cracklePop(int number){
+		if(number == 1) { //Base case to stop the function from running forever
+			System.out.println(number);
+		} else {
+			if (number % 15 == 0)  {
+				System.out.println("CracklePop");
+			} else if (number % 3 == 0) {
+				System.out.println("Crackle");
+			} else if (number % 5 == 0) {
+				System.out.println("Pop");
+			} else {
+				System.out.println(number);
+			}
+			cracklePop(number - 1);
+		}
+	}
+}
